@@ -6,6 +6,14 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
+import RehypeReact from 'rehype-react'
+import Tester from '../components/Tester'
+
+const renderAst = new RehypeReact({
+  createElement: React.createElement,
+  components: { 'tester-elm': Tester }
+}).Compiler
+
 export const BlogPostTemplate = ({
   content,
   contentComponent,
@@ -33,7 +41,7 @@ export const BlogPostTemplate = ({
                 <ul className="taglist">
                   {tags.map(tag => (
                     <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      <Link to={`/tags/${ kebabCase(tag) }/`}>{tag}</Link>
                     </li>
                   ))}
                 </ul>
@@ -57,23 +65,30 @@ BlogPostTemplate.propTypes = {
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
 
+  const content = renderAst(post.htmlAst)
+
   return (
     <Layout>
       <BlogPostTemplate
-        content={post.html}
-        contentComponent={HTMLContent}
+        // content={post.html}
+        content={ content }
+        // contentComponent={HTMLContent}
         description={post.frontmatter.description}
         helmet={
           <Helmet
             titleTemplate="%s | Blog"
           >
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta name="description" content={`${post.frontmatter.description}`} />
+            <title>{`${ post.frontmatter.title }`}</title>
+            <meta
+              name="description"
+              content={`${ post.frontmatter.description }`}
+            />
           </Helmet>
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
+      {/* <div>{ renderAst(post.htmlAst) }</div> */}
     </Layout>
   )
 }
@@ -91,6 +106,7 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      htmlAst
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
