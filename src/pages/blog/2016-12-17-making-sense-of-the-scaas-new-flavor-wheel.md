@@ -15,7 +15,11 @@ The SCAA updated the wheel to reflect the finer nuances needed to describe flavo
 
 While this is going to be a big change for professional coffee tasters, it means a lot to you as a consumer as well. We’ll explain how the wheel came to be, how pros use it and what the flavors actually mean.
 
+# Begin Tester
+
 <tester-elm id="test ID" title="Test Title" description="Perhaps we have more in common than we initially thought, stranger."></tester-elm>
+
+# End Tester
 
 ## What the updates mean to you
 
