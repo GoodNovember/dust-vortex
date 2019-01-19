@@ -7,14 +7,22 @@ import ProductPagePreview from './preview-templates/ProductPagePreview'
 import { blogCollection } from './collections/blogCollection'
 import { pageCollection } from './collections/pageCollection'
 
-import { tester } from './editor-components/tester'
-import { youtube } from './editor-components/youtube'
+// import { tester2 } from './editor-components/tester'
+// import { youtube } from './editor-components/youtube'
+
+import { editorComponents } from './configuration.js'
+
+
 
 init({
   config: {
+    // backend: {
+    //   name: 'git-gateway',
+    //   branch: 'master'
+    // },
     backend: {
-      name: 'git-gateway',
-      branch: 'master'
+      name: 'github',
+      repo: 'GoodNovember/dust-vortex'
     },
     media_folder: 'static/img',
     public_folder: '/img',
@@ -29,5 +37,11 @@ CMS.registerPreviewTemplate('about', AboutPagePreview)
 CMS.registerPreviewTemplate('products', ProductPagePreview)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)
 
-CMS.registerEditorComponent(tester)
-CMS.registerEditorComponent(youtube)
+// CMS.registerEditorComponent(tester)
+// CMS.registerEditorComponent(youtube)
+
+// export const components = GenerateComponents({
+//   'tester-elm-two': tester2
+// })
+
+editorComponents.map(compConfig => CMS.registerEditorComponent(compConfig))

@@ -1,18 +1,14 @@
-import React from 'react'
+import React, { createElement } from 'react'
 import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content from '../components/Content'
-
 import RehypeReact from 'rehype-react'
-import Tester from '../components/Tester'
+import { components } from '../cms/configuration'
 
-const renderAst = new RehypeReact({
-  createElement: React.createElement,
-  components: { 'tester-elm': Tester }
-}).Compiler
+const renderAst = new RehypeReact({ createElement, components }).Compiler
 
 export const BlogPostTemplate = ({
   content,
@@ -73,7 +69,7 @@ const BlogPost = ({ data }) => {
         // content={post.html}
         content={ content }
         // contentComponent={HTMLContent}
-        description={post.frontmatter.description}
+        description={ post.frontmatter.description }
         helmet={
           <Helmet
             titleTemplate="%s | Blog"
@@ -85,8 +81,8 @@ const BlogPost = ({ data }) => {
             />
           </Helmet>
         }
-        tags={post.frontmatter.tags}
-        title={post.frontmatter.title}
+        tags={ post.frontmatter.tags }
+        title={ post.frontmatter.title }
       />
       {/* <div>{ renderAst(post.htmlAst) }</div> */}
     </Layout>
