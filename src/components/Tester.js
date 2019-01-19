@@ -11,6 +11,7 @@ const Description = styled.div`
   border: 1px solid black;
   background: yellow;
   padding: 1rem;
+  white-space: pre-line;
 `
 
 const Title = styled.div`
