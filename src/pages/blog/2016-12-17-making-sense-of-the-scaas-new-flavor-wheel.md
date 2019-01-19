@@ -17,13 +17,13 @@ While this is going to be a big change for professional coffee tasters, it means
 
 # Begin Tester
 
-<tester-elm id="test ID" title="Test Title" description="Perhaps we have more in common than we initially thought, stranger."></tester-elm>
+<tester-elm id="test%20ID" title="Test%20Title" description="Perhaps%20we%20have%20more%20in%20common%20than%20we%20initially%20thought,%20stranger.%0A%0AWe%20have%20a%20few%20more%20things%20to%20think%20about%0A%0A!!!@@@###$$$%25%25%25%5E%5E%5E&&&***((()))%0A%0AWalrus%20Eggs"></tester-elm>
 
 # End Tester
 
 Tester 2:
 
-<tester-elm-two id="Worker bee" title="Bounce and Bee" description="Decomposition" marked-body="Ready and Waiting for you"></tester-elm-two>
+<tester-elm-two id="Worker%20bee" title="Bounce%20and%20Bee" description="Decomposition" marked-body="Ready%20and%20Waiting%20for%20you"></tester-elm-two>
 
 Tester 2:
 
