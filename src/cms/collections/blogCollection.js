@@ -6,13 +6,13 @@ import {
   MarkdownField,
   DateTimeField,
   ListField
-} from './utils'
+} from '../utils/fields'
 
 export const blogCollection = {
   name: 'blog',
   label: 'Blog Posts',
   label_singular: 'Blog Post',
-  folder: 'src/pages/blog',
+  folder: 'src/content/blog',
   create: true,
   slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
   fields: [
