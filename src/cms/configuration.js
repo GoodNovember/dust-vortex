@@ -6,7 +6,7 @@ import { tester, tester2 } from './editor-components/tester'
 
 const configuration = {
   'tester-elm': tester,
-  'tester-elm-two': tester2,
+  'tester-elm-two': tester2
 }
 
 export const {
