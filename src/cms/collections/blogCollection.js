@@ -8,13 +8,15 @@ import {
   ListField
 } from '../utils/fields'
 
-export const blogCollection = {
-  name: 'blog',
+import previewComponent from '../preview-templates/BlogPostPreview'
+
+export const collection = {
   label: 'Blog Posts',
   label_singular: 'Blog Post',
   folder: 'src/content/blog',
   create: true,
   slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+  previewComponent,
   fields: [
     Kind('blog-post'),
     TemplateKey('blog-post'),
