@@ -19,8 +19,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${ __dirname }/src/content/pages`,
-        name: 'pages',
+        path: `${ __dirname }/src/content/user-pages`,
+        name: 'user-pages',
       },
     },
     {
@@ -57,6 +57,13 @@ module.exports = {
         path: `${ __dirname }/src/img`,
         name: 'images',
       },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${ __dirname }/src/content/settings`,
+        name: 'settings',
+      }
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
@@ -97,6 +104,7 @@ module.exports = {
         stylesPath: `${ __dirname }/src/cms/cms.css`,
       },
     },
+    'gatsby-plugin-styled-components',
     {
       // purges all unused/unreferenced css rules
       resolve: 'gatsby-plugin-purgecss',

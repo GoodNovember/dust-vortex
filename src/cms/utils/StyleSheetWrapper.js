@@ -12,13 +12,13 @@ export class StyleSheetWrapper extends Component {
     this.setState({ headTarget })
   }
   render () {
-    const { state, props } = this
-    const { children } = props
+    const { state } = this
+    const { interiorComponent, ...props } = this.props
+    const InteriorComponent = interiorComponent
     if (state && state.headTarget) {
-      return ( <StyleSheetManager target={ state.headTarget }>{ children }</StyleSheetManager> )
+      return ( <StyleSheetManager target={ state.headTarget }><InteriorComponent { ...props } /></StyleSheetManager> )
     }else{
-      return children   
+      return <InteriorComponent { ...props } />  
     }
-
   }
 }

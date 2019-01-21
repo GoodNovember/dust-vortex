@@ -10,15 +10,15 @@ import {
   // // ListField,
 } from '../utils/fields'
 
-export const pageCollection = {
-  name: 'page',
+export const collection = {
   label: 'Pages',
   label_singular: 'Page',
-  folder: 'src/content/pages',
+  folder: 'src/content/user-pages',
+  create: true,
   fields: [
     Kind('page'),
     TemplateKey('page'),
     Title(),
-    Body(),
+    Body()
   ]
 }
