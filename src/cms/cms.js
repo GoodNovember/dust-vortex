@@ -1,15 +1,8 @@
 import React from 'react'
 import CMS, { init } from 'netlify-cms'
-import rawCollectionsMapping from './collections'
+import collections from './collections'
 import { editorComponents } from './configuration.js'
 import { StyleSheetWrapper } from './utils/StyleSheetWrapper.js'
-
-const collections = Object.keys(rawCollectionsMapping)
-  .reduce((acc, name) => {
-    const { collection } = rawCollectionsMapping[name]
-    acc.push(Object.assign({}, { name }, collection))
-    return acc
-  }, [])
 
 init({
   config: {

@@ -10,8 +10,26 @@ import * as BlogCollection from './blogCollection'
 import * as PageCollection from './pageCollection'
 import * as SettingsCollection from './settingsCollection'
 
-export default {
+const collectionMap = {
   'blog': BlogCollection,
   'pages': PageCollection,
   'settings': SettingsCollection
 }
+
+const collectionOrder = [
+  'blog',
+  'pages',
+  'settings'
+]
+
+const unsortedCollection = Object.keys(collectionMap).reduce((acc, name) => {
+  const { collection } = collectionMap[name]
+  acc.push(Object.assign({}, { name }, collection))
+  return acc
+}, [])
+
+const sortedCollection = collectionOrder.map(sortName => {
+  return unsortedCollection.find(({ name }) => (sortName === name))
+})
+
+export default sortedCollection
