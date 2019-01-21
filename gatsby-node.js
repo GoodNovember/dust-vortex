@@ -103,7 +103,17 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-    
+    blogSettings:allFile(filter:{ name:{ eq:"blogSettings" } }){
+      edges{
+        node{
+          childMarkdownRemark{
+            frontmatter{
+              blogPrefix
+            }
+          }
+        }
+      }
+    }
   }
   `).then(result => {
     const { errors, data } = result

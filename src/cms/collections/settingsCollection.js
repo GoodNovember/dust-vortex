@@ -1,6 +1,6 @@
 import {
   // TemplateKey,
-  // Kind,
+  Kind,
   // Body,
   // Title,
   // ImageField,
@@ -21,6 +21,7 @@ export const collection = {
       file: 'src/content/settings/blogSettings.md',
       label: 'Blog Settings',
       fields: [
+        Kind('blogSettings'),
         StringField({
           name: 'blogPrefix',
           label: 'Blog Prefix'
