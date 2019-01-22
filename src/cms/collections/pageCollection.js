@@ -2,7 +2,8 @@ import {
   TemplateKey,
   Kind,
   Body,
-  Title
+  Title,
+  Slug
   // ImageField,
   // StringField
   // // ObjectField,
@@ -10,15 +11,19 @@ import {
   // // ListField,
 } from '../utils/fields'
 
+import previewComponent from '../preview-templates/UserPagePreview'
+
 export const collection = {
   label: 'Pages',
   label_singular: 'Page',
+  previewComponent,
   folder: 'src/content/user-pages',
   create: true,
   fields: [
     Kind('page'),
-    TemplateKey('page'),
+    TemplateKey('user-page'),
     Title(),
+    Slug(),
     Body()
   ]
 }

@@ -34,3 +34,5 @@ export const Body = props => MarkdownField(Object.assign({}, {
   name: 'body', label: 'Body' }), props)
 
 export const Image = props => ImageField({ ...props })
+
+export const Slug = () => StringField({ label: 'Slug', name: 'slug' })

@@ -5,7 +5,8 @@ import {
   TextField,
   MarkdownField,
   DateTimeField,
-  ListField
+  ListField,
+  Slug
 } from '../utils/fields'
 
 import previewComponent from '../preview-templates/BlogPostPreview'
@@ -21,6 +22,7 @@ export const collection = {
     Kind('blog-post'),
     TemplateKey('blog-post'),
     Title(),
+    Slug(),
     DateTimeField({
       name: 'date',
       label: 'Publish Date'
