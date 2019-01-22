@@ -23,6 +23,10 @@ export const collection = {
       fields: [
         Kind('blogSettings'),
         StringField({
+          name: 'blogName',
+          label: 'Blog Name'
+        }),
+        StringField({
           name: 'blogPrefix',
           label: 'Blog Prefix'
         })
