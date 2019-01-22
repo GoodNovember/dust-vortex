@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const Hugger = styled.div`
   border: 1px solid black;
@@ -35,5 +36,11 @@ const Tester = ({ id, description, title }) => (
     <Description>{ description }</Description>
   </Hugger>
 )
+
+Tester.propTypes = {
+  id: PropTypes.string,
+  description: PropTypes.string,
+  title: PropTypes.string
+}
 
 export default Tester
