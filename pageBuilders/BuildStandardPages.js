@@ -3,7 +3,7 @@ const BuildStandardPages = ({ graphql, actions }) => new Promise((resolve, rejec
   const { createPage } = actions
   const query = `
   {
-    standards:allFile(filter:{ sourceInstanceName:{ eq:"user-pages" } }){
+    standards:allFile(filter:{ sourceInstanceName:{ eq:"standards" } }){
       edges{
         node{
           childMarkdownRemark{
