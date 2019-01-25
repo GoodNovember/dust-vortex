@@ -1,3 +1,6 @@
+// eslint-disable-next-line no-useless-escape
+const ignore = [`**/\.*`]
+
 module.exports = {
   siteMetadata: {
     title: 'Gatsby + Netlify CMS Starter',
@@ -21,6 +24,7 @@ module.exports = {
       options: {
         path: `${ __dirname }/src/content/user-pages`,
         name: 'user-pages',
+        ignore
       },
     },
     {
@@ -28,6 +32,7 @@ module.exports = {
       options: {
         path: `${ __dirname }/src/content/blog`,
         name: 'blog-posts',
+        ignore
       },
     },
     {
@@ -35,6 +40,7 @@ module.exports = {
       options: {
         path: `${ __dirname }/src/content/educational-standards`,
         name: 'standards',
+        ignore
       },
     },
     {
@@ -42,6 +48,7 @@ module.exports = {
       options: {
         path: `${ __dirname }/src/content/library-catalogue`,
         name: 'library-items',
+        ignore
       },
     },
     {
@@ -49,6 +56,7 @@ module.exports = {
       options: {
         path: `${ __dirname }/src/content/museum-events`,
         name: 'museum-events',
+        ignore
       },
     },
     {
@@ -56,6 +64,7 @@ module.exports = {
       options: {
         path: `${ __dirname }/src/content/people`,
         name: 'people',
+        ignore
       },
     },
     {
@@ -70,6 +79,7 @@ module.exports = {
       options: {
         path: `${ __dirname }/src/content/settings`,
         name: 'settings',
+        ignore
       }
     },
     'gatsby-plugin-sharp',
