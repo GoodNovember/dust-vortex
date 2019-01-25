@@ -2,7 +2,7 @@
 kind: museum-event
 templateKey: museum-event
 title: Annual Membership Meeting
-slug: Annual Membership Meeting
+slug: membership-meeting
 priceInfo: Free for Members
 eventStart: 2019-01-31T22:30:40.994Z
 eventEnd: 2019-01-31T23:30:41.035Z
