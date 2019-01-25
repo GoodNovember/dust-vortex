@@ -6,25 +6,27 @@
 // having all the collections in a centralized object helps to catch any
 // naming conflicts between collections.
 
-import * as BlogCollection from './blogCollection'
-import * as PageCollection from './pageCollection'
-import * as SettingsCollection from './settingsCollection'
+import BlogCollection from './blogCollection'
+import PageCollection from './pageCollection'
+import SettingsCollection from './settingsCollection'
+import StandardCollection from './standardCollection'
 
 const collectionMap = {
   'blog': BlogCollection,
   'pages': PageCollection,
-  'settings': SettingsCollection
+  'settings': SettingsCollection,
+  'standards': StandardCollection
 }
 
 const collectionOrder = [
   'blog',
   'pages',
-  'settings'
+  'standards',
+  'settings' // lets keep this last
 ]
 
 const unsortedCollection = Object.keys(collectionMap).reduce((acc, name) => {
-  const { collection } = collectionMap[name]
-  acc.push(Object.assign({}, { name }, collection))
+  acc.push(Object.assign({}, { name }, collectionMap[name]))
   return acc
 }, [])
 
