@@ -5,7 +5,6 @@ import {
   TextField,
   MarkdownField,
   DateTimeField,
-  ListField,
   Slug,
   Tags
 } from '../utils/fields'
