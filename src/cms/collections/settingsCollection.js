@@ -10,7 +10,7 @@ import {
   // // ListField,
 } from '../utils/fields'
 
-export const collection = {
+const collection = {
   label: 'Settings',
   editor: {
     preview: false
@@ -34,3 +34,5 @@ export const collection = {
     }
   ]
 }
+
+export default collection

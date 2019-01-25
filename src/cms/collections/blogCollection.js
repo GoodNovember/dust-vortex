@@ -6,12 +6,13 @@ import {
   MarkdownField,
   DateTimeField,
   ListField,
-  Slug
+  Slug,
+  Tags
 } from '../utils/fields'
 
 import previewComponent from '../preview-templates/BlogPostPreview'
 
-export const collection = {
+const collection = {
   label: 'Blog Posts',
   label_singular: 'Blog Post',
   folder: 'src/content/blog',
@@ -35,9 +36,8 @@ export const collection = {
       name: 'body',
       label: 'Body'
     }),
-    ListField({
-      name: 'tags',
-      label: 'Tags'
-    })
+    Tags()
   ]
 }
+
+export default collection

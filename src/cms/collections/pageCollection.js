@@ -3,7 +3,8 @@ import {
   Kind,
   Body,
   Title,
-  Slug
+  Slug,
+  Tags
   // ImageField,
   // StringField
   // // ObjectField,
@@ -13,7 +14,7 @@ import {
 
 import previewComponent from '../preview-templates/UserPagePreview'
 
-export const collection = {
+const collection = {
   label: 'Pages',
   label_singular: 'Page',
   previewComponent,
@@ -24,6 +25,9 @@ export const collection = {
     TemplateKey('user-page'),
     Title(),
     Slug(),
-    Body()
+    Body(),
+    Tags()
   ]
 }
+
+export default collection

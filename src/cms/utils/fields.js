@@ -12,6 +12,8 @@ export const MarkdownField = MakeFieldWidget('markdown')
 export const ListField = MakeFieldWidget('list')
 export const ImageField = MakeFieldWidget('image')
 export const ObjectField = MakeFieldWidget('object')
+export const SelectField = MakeFieldWidget('select')
+export const NumberField = MakeFieldWidget('number')
 
 export const Kind = kindString => {
   return HiddenField({ default: kindString, name: 'kind', label: 'Kind' })
@@ -36,3 +38,5 @@ export const Body = props => MarkdownField(Object.assign({}, {
 export const Image = props => ImageField({ ...props })
 
 export const Slug = () => StringField({ label: 'Slug', name: 'slug' })
+
+export const Tags = () => ListField({ name: 'tags', label: 'Tags', hint: 'Separate tags with a comma. ex: "Civil War, Food, Health"', required: false })
